@@ -124,18 +124,12 @@ if ! shopt -oq posix; then
 fi
 #My ROS environment config
 source /opt/ros/kinetic/setup.bash
-source ~/catkinws/devel/setup.bash --extend
-source ~/yyshuows/devel/setup.bash --extend
-source ~/test/rosws/devel/setup.bash --extend
-source ~/test/funws/devel/setup.bash --extend
-source ~/test/urde_demo_ws/devel/setup.bash --extend
-source ~/test/urdf_demo_ws/devel/setup.bash --extend
 
 #clion environment config
-export PATH=$PATH:/home/geeker/Downloads/clionpkg/clion-2019.2.1/bin
+
 
 #set alias
-alias cls='clear'
+alias cc='clear'
 alias sg='sudo gedit'
 alias sgb='sudo gedit ~/.bashrc'
 alias ..='. ~/.bashrc'
