@@ -28,7 +28,11 @@ function if_error(){
 #运行成功返回0，失败返回1
     result=$?
     if [ $result  -eq 0 ];then
-   	echo 'Congratulations,某部分执行通过'
+	gxmessage -center \
+          -buttons "Amd Yes":1,"Trump No":2 \
+          -geometry 400x200 \
+          -title "运行成功提示" 'Congratulations,某部分执行通过'
+
     else
 	gxmessage -center \
           -buttons "Amd Yes":1,"Trump No":2 \
@@ -38,7 +42,8 @@ function if_error(){
     fi
 }
 ################################正文开始#############################
-#update   #自定义函数
+#脚本功能：在脚本后面输入执行的命令作为第一个参数
+#	   用弹窗来提醒该命令的执行状态
 echo -e '\033[37m脚本即将开始执行'
 ${@:1}
 if_error
