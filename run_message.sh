@@ -33,12 +33,12 @@ if_error(){
 	gxmessage -center \
           -buttons "Amd Yes":1,"Trump No":2 \
           -geometry 400x200 \
-          -title "运行成功提示" 'Congratulations,某部分执行通过'
+          -title "运行成功提示" "Congratulations,命令执行$counter次通过"
     else
 	gxmessage -center \
           -buttons "Amd Yes":1,"Trump No":2 \
           -geometry 400x200 \
-          -title "运行出错提示" '执行出错，查看teminal信息'
+          -title "运行出错提示" "执行$counter次仍未通过，查看teminal报错信息"
 	exit 
     fi
 }
@@ -58,6 +58,7 @@ param_processing(){
 		echo -e "\033[32m----------------第$counter次执行----------------\033[0m"
 		$input_param3
 	    done
+    if_error
     fi
 }
 function message_box(){
@@ -69,10 +70,11 @@ function message_box(){
 
 ################################正文开始#############################
 #使用说明
-#只检查代码是否执行成功模式
+#1.只检查代码是否执行成功模式
 #    文件运行时加两个参数，第一是０，第二个为需要执行的代码
-#循环执行代码模式
+#2.循环执行代码模式
 #    文件运行时三个参数，第一个是１，第二个数字为执行的次数，第三个为执行的代码
+#3.在弹框中提示是否执行成功
 echo -e "\033[32m脚本即将开始执行\033[0m"
 counter=1 #记录执行语句次数
 input_param1=$1
