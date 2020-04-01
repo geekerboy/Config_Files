@@ -46,7 +46,7 @@ param_processing(){
     if [ $1 -eq 0 ];then
 	    echo -e "\033[32m------判断模式------ \033[0m"　
 	    echo '123456'
-            $input_param2
+            $input_param3
             if_error      #函数嵌套调用需要和判断语句齐平书写，否则报错
     	elif [ $1 -eq 1 ];then
 	    echo -e "\033[32m--------------循环执行模式-------------- \033[0m"
