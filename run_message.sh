@@ -30,24 +30,17 @@ if_error(){
 #运行成功返回0，失败返回1
     result=$?
     if [ $result  -eq 0 ];then
-	gxmessage -center \
-          -buttons "Amd Yes":1,"Trump No":2 \
-          -geometry 400x200 \
-          -title "运行成功提示" "Congratulations,命令执行$counter次通过"
+         message_box "Congratulations,命令执行$counter次通过"
     else
-	gxmessage -center \
-          -buttons "Amd Yes":1,"Trump No":2 \
-          -geometry 400x200 \
-          -title "运行出错提示" "执行$counter次仍未通过，查看teminal报错信息"
+	message_box "运行出错提示" "执行$counter次仍未通过，查看teminal报错信息"
 	exit 
     fi
 }
 param_processing(){
     if [ $1 -eq 0 ];then
 	    echo -e "\033[32m------判断模式------ \033[0m"　
-	    echo '123456'
             $input_param3
-            if_error      #函数嵌套调用需要和判断语句齐平书写，否则报错
+            if_error      
     	elif [ $1 -eq 1 ];then
 	    echo -e "\033[32m--------------循环执行模式-------------- \033[0m"
 	    echo -e "\033[32m----------------第1次执行----------------\033[0m"
@@ -65,6 +58,7 @@ function message_box(){
     gxmessage -center \
           -buttons "Amd Yes":1,"Trump No":2 \
           -geometry 400x200 \
+	  -default "Amd Yes" \
           -title "Message Notes" " ${@:1}"
 }
 
