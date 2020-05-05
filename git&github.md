@@ -17,7 +17,8 @@
 * 在github上新建一个repository,并复制仓库链接,最好选择ssh链接(不是https开头的链接)
 * ``git remote add origin 复制的仓库链接``：建立本地仓库和远程的连接,才能传输上去<br>
 可以用``git remote -v``查看本地库连接到的远程目标
-* ``git push``:执行这个会提示先执行一个什么语句,复制粘贴运行完,就已经上传到github上了,以后提交就直接``git push``就行
+* ``git push``:执行这个会提示先执行一个什么语句(执行这个``git push --set-upstream origin master
+``),复制粘贴运行完,就已经上传到github上了,以后提交就直接``git push``就行
 ### github篇
 * 看下面的链接之前,先去[github官网](https://github.com/)注册一个账号,记住username和email,下面要用
 * [配置git和github](https://www.jianshu.com/p/ba01bc001326)
