@@ -8,13 +8,6 @@ case $- in
       *) return;;
 esac
 
-
-#####add ros_config
-export ROS_HOSTNAME=localhost
-export ROS_MASTER_URI=http://localhost:11311
-
-
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -122,25 +115,44 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-#My ROS environment config
-source /opt/ros/kinetic/setup.bash
-
-#clion environment config
-
+#ros enviroment config
+source /opt/ros/melodic/setup.bash
+source ~/test_file/ros_test/devel/setup.bash --extend
+source ~/ros_env/additional_need_ws/devel/setup.bash --extend
+source ~/xcmg_workspace/devel/setup.bash --extend
 
 #set alias
 alias cc='clear'
 alias sg='sudo gedit'
-alias sgb='sudo gedit ~/.bashrc'
+alias sgb='echo " " | sudo -S gedit ~/.bashrc'
 alias ..='. ~/.bashrc'
+alias sai='sudo apt-get install '
+alias iferr='bash ~/test_file/Config_Files/run_message.sh '
+alias runc='bash ~/test_file/Config_Files/run_continuous.sh '
+alias wifi='sudo python3.6 ~/test_file/auto_login/login.py'
+alias pdf='gio open ~/Downloads/study/神经网络/Dive-into-DL-Pytorch.pdf '
+alias data='nautilus ~/test_file/ros_test/src/treatise_simulation/data/data_process_program'
+alias xcmg='gio open /home/geeker/Downloads/study/pcl/徐工项目资料'
+alias ros='nautilus ~/test_file/ros_test'
+alias treatise='nautilus ~/test_file/ros_test/src/treatise_simulation/data'
 
-#make NUC being the ROS master
-#export ROS_MASTER_URI=http://ROS:11311
-#export ROS_HOSTNAME=hacker
-#export ROS_IP=192.168.1.121
+
+#turtlebot3 config
+export TURTLEBOT3_MODEL=burger
 
 
-
-
-
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/geeker/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/geeker/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/geeker/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/geeker/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

@@ -1,14 +1,19 @@
 # Config_Files  
 处理安装过程中的一些问题，提高工作效率  
-### 文件说明   
-* auto.sh 自动安装Clion2019.3版本　     
-* bashrc 保存一些对.bashrc文件的修改　　  
-* run_meddage.sh　对命令行语句执行做一些处理     　   　
+### 文件说明 
+* ``git&github``:学习git的一些总结  
+* ``run_continuous.sh``:连续运行两条命令,runc "command1" "command2"
+* ``auto.sh``:自动安装Clion2019.3版本　     
+* ``bashrc``:保存一些对.bashrc文件的修改　　  
+* ``run_meddage.sh``:对命令行语句执行做一些处理     　   　
 ## auto.sh更新说明　　　　　
 
-## bashrc更新说明　    
-
-## run_meddage.sh更新说明      
+## bashrc更新说明　
+* 一些自定义alias    
+* 带有conda环境
+* turtlebot3环境环境
+* ros
+## run_message.sh更新说明      
 #### 2020.4.1      　　 更改单一判断模式为简单判断模式＋循环执行模式＋结果弹窗提示  
 * 把之前判断执行一次是否成功更改为模式选择                                              
 * 简单判断模式：在命令行中第一个参数输入０，第二个参数也为０，后面（也就是第三个参数）跟的就是需要执行的命令；用来判断单次执行是否成功，执行结果以弹窗形式给出提示                        
