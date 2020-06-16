@@ -45,7 +45,7 @@ param_processing(){
 	    echo -e "\033[32m--------------循环执行模式-------------- \033[0m"
 	    echo -e "\033[32m----------------第1次执行----------------\033[0m"
     	    $input_param3 #执行命令行输入的真正语句　
-	    while [ $? != 0 -a $input_param2 -gt $counter ]   # -a 并列关系，-gt <=
+	    while [ $? != 0 -a $input_param2 -gt $counter ]   # -a 并列关系，-gt >=
 	    do
 		((counter++))
 		echo -e "\033[32m----------------第$counter次执行----------------\033[0m"
