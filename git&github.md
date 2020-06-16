@@ -33,5 +33,6 @@
 * ``git checkout -b branch_name``:新建一个分支并且切换到该分支,然后就可以进行扫操作也不怕了
 * ``git checkout branch_name``:切换到指定分支(``git checkout test``：切换到test分支)
 * ``git push origin test:test``:推送本地分支到远程分支,远程会自动新建分支,远程分支名也可以和本地名称不一致
-
+* ``git branch -d branch_name``:删除分支
+* ``git branch -m old_name new_name``:更改分支名
 
